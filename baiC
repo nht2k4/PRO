@@ -1,0 +1,26 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    ifstream data("tan.txt");
+    if (data.fail()) {
+        cout << "Khong mo duoc file!";
+        return 1;
+    }
+
+    //Tao vong lap de nhan du lieu dau vao
+    string line;
+    int lines = 0;
+    while (!data.eof()) {
+        getline(data, line);
+        cout << line << endl;
+        lines++;
+    }
+    data.close();
+
+    cout<<"Co tat ca "<< lines << " t?nh thành" << endl;
+    return 0;
+}
